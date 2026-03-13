@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BsArrowRight } from 'react-icons/bs';
 
 const Hero = ({ t }) => {
   return (
@@ -49,8 +50,21 @@ const Hero = ({ t }) => {
           transition={{ duration: 1, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-6 justify-center"
         >
-          <a href="#menu" className="px-8 py-4 bg-accent text-primary font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 rounded-sm">
-            {t.viewMenu}
+          <a 
+            href="#about" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-10 py-5 bg-accent text-primary font-bold text-sm tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 flex items-center gap-4 group"
+          >
+            <span className="relative z-10">{t.button}</span>
+            <motion.span 
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <BsArrowRight className="text-xl" />
+            </motion.span>
           </a>
           <a href="#reservation" className="px-8 py-4 border border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent/10 transition-colors duration-300 rounded-sm">
             {t.reserve}

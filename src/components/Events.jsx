@@ -34,18 +34,18 @@ const Events = ({ t }) => {
   ];
 
   return (
-    <section id="events" className="section-padding py-24 bg-primary relative overflow-hidden">
+    <section id="events" className="section-padding py-16 sm:py-24 bg-primary relative overflow-hidden">
       {/* Glow effects */}
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-optional-accent/10 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="uppercase tracking-widest text-accent text-sm font-bold mb-4"
+            className="uppercase tracking-widest text-accent text-xs sm:text-sm font-bold mb-3 sm:mb-4"
           >
             {t.badge}
           </motion.p>
@@ -54,13 +54,13 @@ const Events = ({ t }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
           >
             {t.title}
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {t.items.map((event, idx) => (
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -70,7 +70,7 @@ const Events = ({ t }) => {
               key={idx}
               className="group relative rounded-2xl overflow-hidden bg-black border border-white/5 hover:border-accent/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.1)]"
             >
-              <div className="h-64 overflow-hidden relative">
+              <div className="h-44 sm:h-52 md:h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
                 <img 
                   src={eventImages[idx]} 
@@ -79,25 +79,25 @@ const Events = ({ t }) => {
                 />
               </div>
               
-              <div className="p-8 relative z-20 -mt-20">
-                <h3 className="text-2xl font-playfair font-bold text-white mb-4 group-hover:text-accent transition-colors">{event.title}</h3>
+              <div className="p-6 sm:p-8 relative z-20 -mt-12 sm:-mt-20 text-center sm:text-left">
+                <h3 className="text-xl sm:text-2xl font-playfair font-bold text-white mb-3 sm:mb-4 group-hover:text-accent transition-colors">{event.title}</h3>
                 
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-secondary/70 text-sm gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-4 sm:mb-6">
+                  <div className="flex items-center justify-center sm:justify-start text-secondary/70 text-xs sm:text-sm gap-2">
                     <FaCalendarAlt className="text-accent" />
                     <span className="font-light">{event.day}</span>
                   </div>
-                  <div className="flex items-center text-secondary/70 text-sm gap-3">
+                  <div className="flex items-center justify-center sm:justify-start text-secondary/70 text-xs sm:text-sm gap-2">
                     <FaClock className="text-accent" />
                     <span className="font-light">{event.time}</span>
                   </div>
                 </div>
                 
-                <p className="text-secondary/60 text-sm font-light leading-relaxed mb-8">
+                <p className="text-secondary/60 text-xs sm:text-sm font-light leading-relaxed mb-6 sm:mb-8 line-clamp-3 sm:line-clamp-none">
                   {event.desc}
                 </p>
                 
-                <a href="#reservation" className="block w-full py-3 text-center border border-white/20 text-white uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                <a href="#reservation" className="block w-full py-2.5 sm:py-3 text-center border border-white/20 text-white uppercase tracking-widest text-[10px] sm:text-xs font-bold hover:bg-white hover:text-primary transition-all duration-300">
                   {t.reserve}
                 </a>
               </div>

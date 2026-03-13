@@ -1,123 +1,137 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-const categories = ["Starters", "Main Dishes", "Drinks", "Desserts"];
+const topImageMap = {
+  s1: "/images/cat_non_fasting_lunch_dinner.png", // Dine In
+  s2: "/images/andinet_platter.png",               // Agelgel
+  s3: "/images/cat_des9_specials.png",            // Live Band Events
+};
 
-const menuItems = [
-  { id: 1, category: "Starters", name: "Non-Fasting Lunch & Dinner", desc: "A rich and hearty selection of premium meat and fish dishes.", price: "", img: "/images/cat_non_fasting_lunch_dinner.png" },
-  { id: 2, category: "Starters", name: "Fasting Lunch & Dinner", desc: "A vibrant spread of plant-based Ethiopian classics.", price: "", img: "/images/cat_fasting_lunch_dinner.png" },
-  { id: 3, category: "Main Dishes", name: "Fikir", desc: "Dulet, Quanta, Enkulal, Gomen & Ayib. Bale 2 / Portion for 2.", price: "700 ETB", img: "/images/cat_non_fasting_breakfast.png" },
-  { id: 4, category: "Main Dishes", name: "Andinet", desc: "Tibs, Senber, Quanta, Dulet, Gomen, Ayib, Enkulal & Siga Firfir. Bale 3 / Portion for 3.", price: "950 ETB", img: "/images/cat_non_fasting_lunch_dinner.png" },
-  { id: 5, category: "Drinks", name: "Champagne | ሻምፓኝ", desc: "Moët & Chandon, Veuve Clicquot, Martini Asti.", price: "", img: "/images/header_champagne.png" },
-  { id: 6, category: "Drinks", name: "Vodka | ቮድካ", desc: "Absolut Vodka, Smirnoff Vodka, Grey Goose Vodka.", price: "", img: "/images/header_whisky.png" }
-];
+const galleryImageMap = {
+  1: "/images/cat_non_fasting_lunch_dinner.png",
+  2: "/images/cat_fasting_lunch_dinner.png",
+  7: "/images/ful.jpg",
+  8: "/images/katelo.jpg",
+  3: "/images/dulet.jpg",
+  4: "/images/andinet_platter.png",
+  9: "/images/cat_non_fasting_breakfast.png",
+  10: "/images/cat_des9_specials.png",
+  5: "/images/header_champagne.png",
+  6: "/images/vodka_premium.png",
+  11: "/images/header_red_wine.png",
+  12: "/images/bar special.jpg",
+};
 
-const Menu = ({ t }) => {
-  const [activeTab, setActiveTab] = useState(t.categories[0]);
-
-  // Map category names back to EN IDs for filtering if needed, 
-  // or just filter by index/translated name. 
-  // Given the structure, we'll filter by the translated category name from t.categories.
-  const filteredItems = t.items.filter((item, idx) => {
-    if (activeTab === t.categories[0]) return idx < 2; // Starters
-    if (activeTab === t.categories[1]) return idx >= 2 && idx < 4; // Main
-    if (activeTab === t.categories[2]) return idx >= 4; // Drinks
-    return false;
-  });
-
-  // Re-map images since they aren't in translations
-  const itemImages = [
-    "/images/cat_non_fasting_lunch_dinner.png",
-    "/images/cat_fasting_lunch_dinner.png",
-    "/images/cat_non_fasting_breakfast.png",
-    "/images/cat_non_fasting_lunch_dinner.png",
-    "/images/header_champagne.png",
-    "/images/header_whisky.png",
-    "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1472555694391-ee53280ce497?q=80&w=600&auto=format&fit=crop"
-  ];
+const AutoScrollRow = ({ items }) => {
+  // Duplicating items 4 times to ensure no gaps during loop or drag
+  const duplicatedItems = [...items, ...items, ...items, ...items];
+  const constraintsRef = useRef(null);
 
   return (
-    <section id="menu" className="section-padding py-24 bg-[#080808] relative">
-      <div className="container mx-auto max-w-7xl">
-        
-        <div className="text-center mb-16">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="uppercase tracking-widest text-accent text-sm font-bold mb-4"
+    <div className="relative overflow-hidden w-full py-6 sm:py-10" ref={constraintsRef}>
+      <motion.div
+        className="flex gap-4 sm:gap-8 w-max px-4 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={constraintsRef}
+        animate={{
+          x: ["0%", "-25%"],
+        }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop"
+        }}
+        // Removed pause on hover/tap to ensure animation persists on mobile
+        dragElastic={0.1}
+      >
+        {duplicatedItems.map((item, idx) => (
+          <div
+            key={`${item.id}-${idx}`}
+            className="w-[280px] sm:w-[450px] md:w-[500px] flex-shrink-0 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden relative"
           >
-            {t.badge}
-          </motion.p>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
-          >
-            {t.title}
-          </motion.h2>
-        </div>
+            <div className="h-36 sm:h-48 md:h-56 overflow-hidden relative">
+              <img
+                src={galleryImageMap[item.id]}
+                alt={item.name}
+                className="w-full h-full object-cover pointer-events-none"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60"></div>
+            </div>
+            
+            <div className="p-4 sm:p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-playfair text-white tracking-wider mb-2">
+                {item.name}
+              </h3>
+              <p className="text-secondary/60 text-xs sm:text-sm md:text-base font-light leading-relaxed font-inter line-clamp-2 sm:line-clamp-none">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
-        {/* Categories Navbar */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {t.categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveTab(category)}
-              className={`px-6 py-2 rounded-full font-inter tracking-wider transition-all duration-300 ${
-                activeTab === category 
-                  ? 'bg-accent text-primary font-bold shadow-[0_0_15px_rgba(201,162,39,0.5)]' 
-                  : 'bg-transparent text-secondary hover:text-accent border border-white/10'
-              }`}
+const Menu = ({ t }) => {
+  return (
+    <section id="services" className="py-20 sm:py-32 bg-[#050505] relative overflow-hidden">
+      {/* Background Accents */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-[10%] -left-[10%] w-[40%] h-[40%] bg-accent/5 blur-[150px] rounded-full"></div>
+        <div className="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-accent/5 blur-[150px] rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-6 relative z-10 text-center mb-12 sm:mb-20">
+        <div className="inline-block px-4 py-1.5 border border-accent/20 rounded-full mb-6 sm:mb-8 bg-accent/5 backdrop-blur-sm">
+          <p className="uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent text-[10px] sm:text-[11px] font-bold">
+            {t.badge}
+          </p>
+        </div>
+        
+        <h2 className="text-5xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4 sm:mb-6 tracking-tight">
+          {t.title}
+        </h2>
+        <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mt-4 sm:mt-8 rounded-full"></div>
+      </div>
+
+      {/* 3 Static Top Services */}
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 relative z-10 mb-16 sm:mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          {t.topServices.map((service) => (
+            <div
+              key={service.id}
+              className="bg-white/5 border border-white/10 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden flex flex-col"
             >
-              {category}
-            </button>
+              <div className="h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden relative">
+                <img
+                  src={topImageMap[service.id]}
+                  alt={service.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent opacity-70"></div>
+              </div>
+              <div className="p-6 sm:p-8 lg:p-10 text-center flex-grow flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair text-white mb-3 sm:mb-4 uppercase tracking-widest gold-gradient-text">
+                  {service.name}
+                </h3>
+                <p className="text-secondary/70 text-sm sm:text-base lg:text-lg font-light leading-relaxed italic">
+                  "{service.desc}"
+                </p>
+              </div>
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* Menu Items Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, idx) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                key={item.id}
-                className="group flex flex-col sm:flex-row bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:shadow-[0_0_30px_rgba(201,162,39,0.15)] hover:border-accent/50 hover:-translate-y-1 transition-all duration-500"
-              >
-                <div className="w-full sm:w-2/5 overflow-hidden">
-                  <img 
-                    src={itemImages[item.id - 1]} 
-                    alt={item.name} 
-                    className="w-full h-48 sm:h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6 sm:w-3/5 flex flex-col justify-center">
-                  <div className="flex justify-between items-start mb-2 gap-4">
-                    <h3 className="text-xl sm:text-2xl font-playfair text-white">{item.name}</h3>
-                    <span className="text-accent font-playfair text-lg sm:text-xl font-bold whitespace-nowrap">
-                      {item.price}
-                    </span>
-                  </div>
-                  <p className="text-secondary/60 text-sm font-light leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        <div className="text-center mt-16">
-          <a href="#reservation" className="inline-flex items-center gap-2 text-accent hover:text-white uppercase tracking-widest text-sm font-bold transition-colors border-b border-accent hover:border-white pb-1">
-            {t.fullMenu}
-          </a>
+      {/* Scrolling Gallery Below */}
+      <div className="relative z-10 mt-12 pt-12 border-t border-white/5">
+        <div className="container mx-auto max-w-7xl px-6 mb-4 sm:mb-8 text-center md:text-left">
+          <p className="text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-accent/50 font-bold mb-1 sm:mb-2">Explore More</p>
+          <h4 className="text-xl sm:text-2xl font-playfair text-white opacity-80 italic">Our Culinary & Beverage Selections</h4>
         </div>
-
+        <AutoScrollRow items={t.items} />
       </div>
     </section>
   );

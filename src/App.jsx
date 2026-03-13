@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import { translations } from './translations';
 
 function App() {
-  const [lang, setLang] = React.useState('am');
+  const [lang, setLang] = React.useState('en');
   const t = translations[lang];
 
   return (
@@ -21,7 +21,7 @@ function App() {
       <main>
         <Hero t={t.hero} />
         <About t={t.about} />
-        <Menu t={t.menu} />
+        <Menu t={t.services} />
         <Events t={t.events} />
         <Gallery t={t.gallery} />
         <Reservation t={t.reservation} />

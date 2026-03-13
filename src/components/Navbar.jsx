@@ -7,7 +7,8 @@ const Navbar = ({ lang, setLang, t }) => {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    { name: t.menu, href: '#menu' },
+    { name: t.home, href: '#home' },
+    { name: t.menu, href: '#services' },
     { name: t.events, href: '#events' },
     { name: t.gallery, href: '#gallery' },
     { name: t.reservation, href: '#reservation' },
