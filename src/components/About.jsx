@@ -3,48 +3,70 @@ import { motion } from 'framer-motion';
 
 const About = ({ t }) => {
   return (
-    <section id="about" className="py-24 bg-primary relative overflow-hidden">
-      <div className="container mx-auto max-w-4xl px-4 text-center">
+    <section id="about" className="min-h-screen bg-primary relative flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop" 
+          alt="About Background" 
+          className="w-full h-full object-cover opacity-20 grayscale"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary"></div>
+      </div>
+
+      <div className="container mx-auto max-w-5xl px-4 relative z-10 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="uppercase tracking-widest text-accent text-sm font-bold mb-4"
+          className="uppercase tracking-[0.3em] text-accent text-sm font-bold mb-6"
         >
           {t.badge}
         </motion.p>
         
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl lg:text-5xl font-playfair font-bold text-white mb-8"
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="text-5xl lg:text-7xl font-playfair font-bold text-white mb-10 leading-tight"
         >
           {t.heading}
         </motion.h2>
         
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="w-24 h-px bg-accent mx-auto mb-10"
+        ></motion.div>
+
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-secondary/70 mb-10 text-lg leading-relaxed max-w-2xl mx-auto"
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-secondary/80 text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-16"
         >
           {t.description}
         </motion.p>
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <a href="#reservation" className="inline-block px-8 py-4 bg-accent text-primary font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 rounded-sm">
+          <a href="#reservation" className="inline-block px-12 py-5 bg-accent text-primary font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 rounded-sm shadow-2xl">
             {t.cta}
           </a>
         </motion.div>
       </div>
+
+      {/* Aesthetic Accents */}
+      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-accent/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
     </section>
   );
 };
