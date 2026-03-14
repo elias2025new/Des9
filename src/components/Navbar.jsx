@@ -10,9 +10,9 @@ const Navbar = ({ lang, setLang, t }) => {
     { name: t.home, href: '#home' },
     { name: t.menu, href: '#services' },
     { name: t.events, href: '#events' },
-    { name: t.gallery, href: '#gallery' },
     { name: t.reservation, href: '#reservation' },
     { name: t.location, href: '#location' },
+    { name: t.aboutUs, href: '#about' },
   ];
 
   useEffect(() => {

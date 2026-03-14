@@ -60,7 +60,7 @@ const Events = ({ t }) => {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="max-w-4xl mx-auto">
           {t.items.map((event, idx) => (
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -68,10 +68,10 @@ const Events = ({ t }) => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.2, duration: 0.8 }}
               key={idx}
-              className="group relative rounded-2xl overflow-hidden bg-black border border-white/5 hover:border-accent/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.1)]"
+              className="group relative rounded-2xl overflow-hidden bg-black border border-white/5 hover:border-accent/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.1)] flex flex-col md:flex-row"
             >
-              <div className="h-44 sm:h-52 md:h-64 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+              <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
                 <img 
                   src={eventImages[idx]} 
                   alt={event.title} 
@@ -79,25 +79,25 @@ const Events = ({ t }) => {
                 />
               </div>
               
-              <div className="p-6 sm:p-8 relative z-20 -mt-12 sm:-mt-20 text-center sm:text-left">
-                <h3 className="text-xl sm:text-2xl font-playfair font-bold text-white mb-3 sm:mb-4 group-hover:text-accent transition-colors">{event.title}</h3>
+              <div className="w-full md:w-1/2 p-6 sm:p-8 relative z-20 flex flex-col justify-center">
+                <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-white mb-4 group-hover:text-accent transition-colors">{event.title}</h3>
                 
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="flex items-center justify-center sm:justify-start text-secondary/70 text-xs sm:text-sm gap-2">
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-secondary/70 text-sm gap-3">
                     <FaCalendarAlt className="text-accent" />
                     <span className="font-light">{event.day}</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start text-secondary/70 text-xs sm:text-sm gap-2">
+                  <div className="flex items-center text-secondary/70 text-sm gap-3">
                     <FaClock className="text-accent" />
                     <span className="font-light">{event.time}</span>
                   </div>
                 </div>
                 
-                <p className="text-secondary/60 text-xs sm:text-sm font-light leading-relaxed mb-6 sm:mb-8 line-clamp-3 sm:line-clamp-none">
+                <p className="text-secondary/60 text-sm font-light leading-relaxed mb-8">
                   {event.desc}
                 </p>
                 
-                <a href="#reservation" className="block w-full py-2.5 sm:py-3 text-center border border-white/20 text-white uppercase tracking-widest text-[10px] sm:text-xs font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                <a href="#reservation" className="inline-block w-fit px-8 py-3 text-center border border-white/20 text-white uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-primary transition-all duration-300">
                   {t.reserve}
                 </a>
               </div>

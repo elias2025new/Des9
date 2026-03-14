@@ -4,9 +4,9 @@ export const translations = {
       home: "Home",
       menu: "Services",
       events: "Events",
-      gallery: "Gallery",
       reservation: "Reservation",
-      location: "Location",
+      location: "CONTACT",
+      aboutUs: "About Us",
     },
     hero: {
       titlePrefix: "DES",
@@ -17,17 +17,12 @@ export const translations = {
       reserve: "Reserve Table",
       scroll: "Scroll",
     },
-    about: {
+    aboutUs: {
+      badge: "About DES9",
       title: "About Us",
-      badge: "Discover DES9",
-      heading: "A Premium Symphony of Taste & Sound",
-      description: "DES9 Restaurant & Lounge offers an unparalleled dining and nightlife experience. Step into an atmosphere of dark elegance where culinary artistry meets the rhythm of the night.",
-      features: [
-        { title: "Fine Dining", desc: "Exquisite culinary creations crafted by master chefs." },
-        { title: "Live Band Nights", desc: "Soulful rhythms and energetic performances every week." },
-        { title: "Premium Cocktails", desc: "Signature drinks mixed with premium spirits and flair." }
-      ],
-      cta: "Discover More"
+      heading: "A Premium Dining Experience",
+      description: "DES9 Restaurant & Lounge offers a unique blend of fine dining and energetic nightlife. Experience culinary excellence and live music in an elegant atmosphere.",
+      cta: "Reserve Now"
     },
     services: {
       badge: "Experience DES9",
@@ -57,16 +52,9 @@ export const translations = {
       badge: "Nightlife Experience",
       title: "Live Events",
       items: [
-        { title: "Live Band Night", day: "Every Friday", time: "8:00 PM - 1:00 AM", desc: "Start your weekend with our signature live band." },
-        { title: "Ethiopian Jazz Night", day: "Every Saturday", time: "9:00 PM - 2:00 AM", desc: "Experience the rich sounds of Ethio-Jazz." },
-        { title: "Weekend Lounge Party", day: "Every Sunday", time: "6:00 PM - Midnight", desc: "Wind down the weekend with resident DJs." }
+        { title: "Live Band Night", day: "Every Night (Except Wednesday)", time: "Starting 3:00 at Night (Ethiopian Time)", desc: "Experience the heart of Addis Ababa's nightlife with our signature live band." }
       ],
       reserve: "Reserve for this event"
-    },
-    gallery: {
-      badge: "Visual Journey",
-      title: "Gallery",
-      instagram: "Follow @DES9Lounge"
     },
     reservation: {
       title: "Book Your Table",
@@ -101,9 +89,9 @@ export const translations = {
       home: "ቤት",
       menu: "አገልግሎቶች",
       events: "ዝግጅቶች",
-      gallery: "ጋለሪ",
       reservation: "ቦታ ማስያዣ",
       location: "አድራሻ",
+      aboutUs: "ስለ እኛ",
     },
     hero: {
       titlePrefix: "ደሥ ",
@@ -114,17 +102,12 @@ export const translations = {
       reserve: "ቦታ ያስይዙ",
       scroll: "ወደ ታች",
     },
-    about: {
+    aboutUs: {
+      badge: "ስለ ደሥ ፱",
       title: "ስለ እኛ",
-      badge: "ደሥ ፱ን ይወቁ",
-      heading: "የጣዕም እና የድምፅ ምርጥ ቅንጅት",
-      description: "ደሥ ፱ ሬስቶራንት እና ላውንጅ ወደር የሌለው የምግብ እና የሌሊት ህይወት ተሞክሮ ያቀርባል። የምግብ አሰራር ጥበብ ከሌሊቱ ምት ጋር ወደ ሚገናኝበት ጥቁር ውበት ይግቡ።",
-      features: [
-        { title: "ምርጥ ምግቦች", desc: "በዋና ሼፎች የተዘጋጁ ድንቅ የምግብ ፈጠራዎች።" },
-        { title: "የቀጥታ ባንድ ምሽቶች", desc: "በየሳምንቱ ነፍስን የሚያድሱ ዜማዎች እና ተለዋዋጭ ትርኢቶች።" },
-        { title: "ፕሪሚየም ኮክቴሎች", desc: "በጥራት የተዘጋጁ ልዩ መጠጦች።" }
-      ],
-      cta: "ተጨማሪ ይወቁ"
+      heading: "ልዩ የምግብ ተሞክሮ",
+      description: "ደሥ ፱ ሬስቶራንት እና ላውንጅ ወደር የሌለው የምግብ እና የሌሊት ህይወት ተሞክሮ ያቀርባል። የምግብ አሰራር ጥበብ ከሙዚቃ ጋር የሚገናኝበት ምርጥ ቦታ።",
+      cta: "አሁኑኑ ቦታ ያስይዙ"
     },
     services: {
       badge: "ደሥ ፱ ይለማመዱ",
@@ -154,16 +137,9 @@ export const translations = {
       badge: "የሌሊት ህይወት ተሞክሮ",
       title: "ዝግጅቶች",
       items: [
-        { title: "የቀጥታ ባንድ ምሽት", day: "በየሳምንቱ አርብ", time: "ከምሽቱ 2፡00 - 7፡00", desc: "ቅዳሜና እሁድን በልዩ የቀጥታ ባንድ ይጀምሩ።" },
-        { title: "የኢትዮጵያ ጃዝ ምሽት", day: "በየሳምንቱ ቅዳሜ", time: "ከምሽቱ 3፡00 - 8፡00", desc: "የኢትዮ-ጃዝ የበለጸጉ ድምጾችን ይለማመዱ።" },
-        { title: "የሳምንቱ መጨረሻ ድግስ", day: "በየሳምንቱ እሁድ", time: "ከምሽቱ 12፡00 - 6፡00", desc: "ሳምንቱን በልዩ መጠጦች እና በዲጄ ያጠናቅቁ።" }
+        { title: "የቀጥታ ባንድ ምሽት", day: "በየቀኑ (ከረቡዕ በስተቀር)", time: "ከምሽቱ 3:00 ጀምሮ (የኢትዮጵያ ሰዓት)", desc: "የአዲስ አበባን የሙዚቃ ትርታ በልዩ የቀጥታ ባንድ ትርኢታችን ይለማመዱ።" }
       ],
       reserve: "ለዚህ ዝግጅት ቦታ ያስይዙ"
-    },
-    gallery: {
-      badge: "የእይታ ጉዞ",
-      title: "ጋለሪ",
-      instagram: "@DES9Lounge ይከተሉ"
     },
     reservation: {
       title: "ቦታ ያስይዙ",
