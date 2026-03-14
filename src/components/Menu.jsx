@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const topImageMap = {
   s1: "/images/cat_non_fasting_lunch_dinner.png", // Dine In
   s2: "/images/andinet_platter.png",               // Agelgel
-  s3: "/images/cat_des9_specials.png",            // Live Band Events
+  s3: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", // Live Band Events
 };
 
 const galleryImageMap = {
