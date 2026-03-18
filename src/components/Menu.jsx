@@ -99,25 +99,25 @@ const Menu = ({ t }) => {
 
       {/* Top Services */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 relative z-10 mb-16 sm:mb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {t.topServices.map((service) => (
             <div
               key={service.id}
-              className="bg-white/5 border border-white/10 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden flex flex-col"
+              className="bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden flex flex-col sm:flex-row items-stretch"
             >
-              <div className="h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden relative">
+              <div className="w-full sm:w-[45%] lg:w-[40%] h-40 sm:h-auto overflow-hidden relative shrink-0">
                 <img
                   src={topImageMap[service.id]}
                   alt={service.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent opacity-70"></div>
+                <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#050505] sm:from-transparent sm:via-transparent sm:to-[#050505] to-transparent opacity-80"></div>
               </div>
-              <div className="p-6 sm:p-8 lg:p-10 text-center flex-grow flex flex-col justify-center">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair text-white mb-3 sm:mb-4 uppercase tracking-widest gold-gradient-text">
+              <div className="p-5 sm:p-6 lg:p-6 text-center sm:text-left flex-grow flex flex-col justify-center">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-playfair text-white mb-2 sm:mb-3 uppercase tracking-widest gold-gradient-text">
                   {service.name}
                 </h3>
-                <p className="text-secondary/70 text-sm sm:text-base lg:text-lg font-light leading-relaxed italic">
+                <p className="text-secondary/70 text-xs sm:text-sm lg:text-[15px] font-light leading-relaxed italic">
                   "{service.desc}"
                 </p>
               </div>

@@ -29,9 +29,9 @@ export const translations = {
       title: "Our Services",
       topServices: [
         { id: "s1", name: "Dine In", desc: "Amazing Dinning area with a home like service. Come and enjoy with your beloved once! Perfect for romantic dates, family time and hangout space with friends." },
+        { id: "s4", name: "Catering Service", desc: "Whether it's a corporate event, wedding, or intimate gathering, our premium catering service brings the DES9 culinary experience directly to your venue with impeccable service and custom menus." },
         { id: "s2", name: "Agelgel", desc: "Planning to visit relatives? Need to take something for social gathering? We got you covered. Order our Ethiopian taste Agelgel!" },
-        { id: "s3", name: "Live Band Events", desc: "Experience the pulse of Addis with our signature live band. From soulful Ethio-Jazz to vibrant contemporary hits." },
-        { id: "s4", name: "Catering Service", desc: "We do catering." }
+        { id: "s3", name: "Live Band Events", desc: "Experience the pulse of Addis with our signature live band. From soulful Ethio-Jazz to vibrant contemporary hits." }
       ],
       items: [
         { id: 1, name: "Non-Fasting Lunch & Dinner", desc: "A rich and hearty selection of premium meat and fish dishes, expertly prepared with traditional techniques." },
@@ -115,9 +115,9 @@ export const translations = {
       title: "አገልግሎቶቻችን",
       topServices: [
         { id: "s1", name: "በልዩ ሁኔታ መመገብ", desc: "በልዩ ሁኔታ የተዘጋጀ ምቹ የመመገቢያ አዳራሽ ከቤት የመሰለ አገልግሎት ጋር። ለፍቅረኛሞች፣ ለቤተሰብ ጊዜ እና ለጓደኞች መዝናኛ ተመራጭ ነው።" },
+        { id: "s4", name: "የኬተሪንግ አገልግሎት", desc: "ለስብሰባዎች፣ ሰርግ ወይም ለማንኛውም ልዩ ዝግጅት የደሥ ፱ን ምርጥ ጣዕም እና አገልግሎት ወደሚፈልጉት ቦታ እናመጣለን። በልዩ ሁኔታ የተዘጋጀ ምናሌ በማቅረብ ዝግጅትዎን እናደምቃለን።" },
         { id: "s2", name: "አገልግል", desc: "ዘመድ ለመጠየቅ አቅደዋል? ለማህበራዊ ስብስብ የሚሆን ነገር መውሰድ ይፈልጋሉ? እኛ ጋ ይገኛል። የኢትዮጵያን ጣዕም የያዘውን አገልግላችንን ይዘዙ!" },
-        { id: "s3", name: "የቀጥታ ባንድ ዝግጅቶች", desc: "የአዲስ አበባን የሙዚቃ ትርታ በልዩ የቀጥታ ባንድ ትርኢታችን ይለማመዱ። ከኢትዮ-ጃዝ እስከ ዘመናዊ ሙዚቃዎች ድረስ ምሽትዎን የተሟላ እናደርገዋለን።" },
-        { id: "s4", name: "የኬተሪንግ አገልግሎት", desc: "ለልዩ ዝግጅቶች የኬተሪንግ አገልግሎት እንሰጣለን።" }
+        { id: "s3", name: "የቀጥታ ባንድ ዝግጅቶች", desc: "የአዲስ አበባን የሙዚቃ ትርታ በልዩ የቀጥታ ባንድ ትርኢታችን ይለማመዱ። ከኢትዮ-ጃዝ እስከ ዘመናዊ ሙዚቃዎች ድረስ ምሽትዎን የተሟላ እናደርገዋለን።" }
       ],
       items: [
         { id: 1, name: "የፍስክ ምሳ እና እራት", desc: "በኢትዮጵያዊ ቅመሞች የተዘጋጀ ልዩ የሥጋ እና የዓሣ ምግቦች ስብስብ።" },
