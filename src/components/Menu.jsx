@@ -5,6 +5,7 @@ const topImageMap = {
   s1: "/images/cat_non_fasting_lunch_dinner.png", // Dine In
   s2: "/images/andinet_platter.png",               // Agelgel
   s3: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", // Live Band Events
+  s4: "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop", // Catering Service
 };
 
 const galleryImageMap = {
@@ -96,9 +97,9 @@ const Menu = ({ t }) => {
         <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mt-4 sm:mt-8 rounded-full"></div>
       </div>
 
-      {/* 3 Static Top Services */}
+      {/* Top Services */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 relative z-10 mb-16 sm:mb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {t.topServices.map((service) => (
             <div
               key={service.id}
