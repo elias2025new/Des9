@@ -20,21 +20,21 @@ const Hero = ({ t }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-        <motion.p 
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+        <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-2xl font-light tracking-wide md:tracking-widest text-secondary/90 mb-2 uppercase"
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 uppercase tracking-[0.15em]"
         >
           {t.subtitle}
-        </motion.p>
+        </motion.h1>
 
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-md md:text-lg mb-10 text-secondary/70 italic font-playfair"
+          className="text-lg sm:text-xl md:text-2xl mb-14 text-secondary/80 font-light tracking-widest uppercase"
         >
           {t.tagline}
         </motion.p>
