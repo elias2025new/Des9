@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       titlePrefix: "DES",
-      titleSuffix: "9",
+      titleSuffix: "፱",
       subtitle: "Restaurant & Lounge",
       tagline: "Fine Dining • Live Music • Lounge Experience",
       button: "Explore",
@@ -18,18 +18,18 @@ export const translations = {
       scroll: "Scroll",
     },
     aboutUs: {
-      badge: "About DES9",
+      badge: "About DES፱",
       title: "About Us",
       heading: "A Premium Dining Experience",
-      description: "DES9 Restaurant & Lounge offers a unique blend of fine dining and energetic nightlife. Experience culinary excellence and live music in an elegant atmosphere.",
+      description: "DES፱ Restaurant & Lounge offers a unique blend of fine dining and energetic nightlife. Experience culinary excellence and live music in an elegant atmosphere.",
       cta: "Reserve Now"
     },
     services: {
-      badge: "Experience DES9",
+      badge: "Experience DES፱",
       title: "Our Services",
       topServices: [
         { id: "s1", name: "Dine In", desc: "Amazing Dinning area with a home like service. Come and enjoy with your beloved once! Perfect for romantic dates, family time and hangout space with friends." },
-        { id: "s4", name: "Catering Service", desc: "Whether it's a corporate event, wedding, or intimate gathering, our premium catering service brings the DES9 culinary experience directly to your venue with impeccable service and custom menus." },
+        { id: "s4", name: "Catering Service", desc: "Whether it's a corporate event, wedding, or intimate gathering, our premium catering service brings the DES፱ culinary experience directly to your venue with impeccable service and custom menus." },
         { id: "s2", name: "Agelgel", desc: "Planning to visit relatives? Need to take something for social gathering? We got you covered. Order our Ethiopian taste Agelgel!" },
         { id: "s3", name: "Live Band Events", desc: "Experience the pulse of Addis with our signature live band. From soulful Ethio-Jazz to vibrant contemporary hits." }
       ],
@@ -41,7 +41,7 @@ export const translations = {
         { id: 3, name: "Fikir", desc: "A generous platter featuring Dulet, Quanta, Enkulal, Gomen & Ayib — a celebration of Ethiopian flavours." },
         { id: 4, name: "Andinet", desc: "Tibs, Senber, Quanta, Dulet, Gomen, Ayib, Enkulal & Siga Firfir — a grand sharing platter." },
         { id: 9, name: "Breakfast Combo", desc: "A hearty combination of eggs, tibs, and local breads to start your day with energy." },
-        { id: 10, name: "DES9 Special", desc: "Our chef's signature creation featuring the finest cuts of meat and secret spice blend." },
+        { id: 10, name: "DES፱ Special", desc: "Our chef's signature creation featuring the finest cuts of meat and secret spice blend." },
         { id: 5, name: "Champagne", desc: "Moët & Chandon, Veuve Clicquot, Martini Asti. A sophisticated selection of premium bubbly." },
         { id: 6, name: "Vodka", desc: "Absolut Vodka, Smirnoff Vodka, Grey Goose Vodka. Pure excellence in every pour." },
         { id: 11, name: "Red Wine", desc: "A selection of premium international and local red wines for a refined pairing." },
