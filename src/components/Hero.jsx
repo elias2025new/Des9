@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
-import heroBg1 from '../assets/hero-bg.png';
-import heroBg2 from '../assets/hero-bg-2.png';
+import hero1 from '../assets/hero-1.jpg';
+import hero2 from '../assets/hero-bg.png';
+import hero3 from '../assets/hero-3.jpg';
 
 const Hero = ({ t }) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [heroBg1, heroBg2];
+  const images = [hero1, hero2, hero3];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    }, 10000); // Change image every 10 seconds
     return () => clearInterval(timer);
   }, [images.length]);
 
