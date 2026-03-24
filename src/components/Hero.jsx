@@ -21,15 +21,6 @@ const Hero = ({ t }) => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-2 sm:mb-4"
-        >
-          {t.titlePrefix}<span className="text-accent">{t.titleSuffix}</span>
-        </motion.h1>
-        
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
