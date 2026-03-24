@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
+import heroBg from '../assets/hero-bg.png';
 
 const Hero = ({ t }) => {
   return (
@@ -8,7 +9,7 @@ const Hero = ({ t }) => {
       {/* Background Media */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
         <img 
-          src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2000&auto=format&fit=crop" 
+          src={heroBg} 
           alt="Luxury Restaurant Lounge" 
           className="w-full h-full object-cover max-w-none"
         />

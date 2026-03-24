@@ -39,7 +39,7 @@ const Navbar = ({ lang, setLang, t }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center max-w-7xl">
           <a href="#home" className="text-xl sm:text-2xl font-playfair font-bold gold-gradient-text tracking-wider whitespace-nowrap">
-            {lang === 'am' ? 'ደሥ ፱' : 'DES9'}
+            {lang === 'am' ? 'ደሥ ፱' : 'DES፱'}
           </a>
 
           {/* Desktop Nav */}
