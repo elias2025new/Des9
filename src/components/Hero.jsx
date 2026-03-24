@@ -1,18 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
-import heroBg from '../assets/hero-bg.png';
+import heroVideo from '../assets/hero-bg.mp4';
 
 const Hero = ({ t }) => {
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Media */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        <img 
-          src={heroBg} 
-          alt="Luxury Restaurant Lounge" 
-          className="w-full h-full object-cover max-w-none"
-        />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary"></div>
       </div>
 
