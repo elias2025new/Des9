@@ -41,7 +41,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="hidden md:block text-4xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4"
+          className="text-5xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-2 sm:mb-4"
         >
           {t.titlePrefix}<span className="text-accent">{t.titleSuffix}</span>
         </motion.h1>
@@ -50,7 +50,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-2xl sm:text-3xl md:text-xl lg:text-2xl font-playfair font-bold md:font-light md:tracking-[0.5em] text-white md:text-secondary/90 mb-4 md:mb-2 uppercase"
+          className="text-lg sm:text-2xl md:text-xl lg:text-2xl font-light tracking-[0.2em] sm:tracking-[0.5em] text-secondary/90 mb-4 sm:mb-2 uppercase"
         >
           {t.subtitle}
         </motion.p>
@@ -59,7 +59,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-lg lg:text-xl mb-10 md:mb-10 text-secondary/70 italic font-playfair md:tracking-widest px-4 md:px-0"
+          className="text-sm sm:text-lg md:text-lg lg:text-xl mb-12 sm:mb-10 text-secondary/70 italic font-playfair sm:tracking-widest px-4 md:px-0"
         >
           {t.tagline}
         </motion.p>
