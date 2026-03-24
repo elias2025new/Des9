@@ -24,17 +24,26 @@ const Hero = ({ t }) => {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 uppercase tracking-[0.15em]"
+          transition={{ duration: 1, delay: 0.2 }}
+          className="hidden md:block text-4xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4"
         >
-          {t.subtitle}
+          {t.titlePrefix}<span className="text-accent">{t.titleSuffix}</span>
         </motion.h1>
 
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="text-2xl sm:text-3xl md:text-xl lg:text-2xl font-playfair font-bold md:font-light md:tracking-[0.5em] text-white md:text-secondary/90 mb-4 md:mb-2 uppercase"
+        >
+          {t.subtitle}
+        </motion.p>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg sm:text-xl md:text-2xl mb-14 text-secondary/80 font-light tracking-widest uppercase"
+          className="text-base sm:text-lg md:text-lg lg:text-xl mb-10 md:mb-10 text-secondary/70 italic font-playfair md:tracking-widest px-4 md:px-0"
         >
           {t.tagline}
         </motion.p>
@@ -46,10 +55,10 @@ const Hero = ({ t }) => {
           className="flex flex-col sm:flex-row gap-6 justify-center"
         >
           <a 
-            href="#about" 
+            href="#services" 
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="px-10 py-5 bg-accent text-primary font-bold text-sm tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 flex items-center gap-4 group"
           >

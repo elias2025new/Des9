@@ -29,13 +29,21 @@ const Navbar = ({ lang, setLang, t }) => {
       {/* Navbar Bar */}
       <motion.nav
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed w-full z-[150] transition-all duration-300 ${
-          scrolled || isOpen
-            ? 'bg-primary/95 backdrop-blur-md shadow-lg py-4 border-b border-white/5'
-            : 'bg-transparent py-6'
-        }`}
+        animate={{ 
+          y: 0,
+          backgroundColor: scrolled || isOpen ? 'rgba(5, 5, 5, 0.95)' : 'rgba(0, 0, 0, 0)',
+          paddingTop: scrolled || isOpen ? '16px' : '24px',
+          paddingBottom: scrolled || isOpen ? '16px' : '24px',
+          backdropFilter: scrolled || isOpen ? 'blur(12px)' : 'blur(0px)',
+          borderBottomColor: scrolled || isOpen ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0)',
+          boxShadow: scrolled || isOpen ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : 'none'
+        }}
+        transition={{ 
+          duration: 0.4,
+          ease: "easeInOut"
+        }}
+        className="fixed w-full z-[150] border-b transform-gpu"
+        style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center max-w-7xl">
           <a href="#home" className="text-xl sm:text-2xl font-playfair font-bold gold-gradient-text tracking-wider whitespace-nowrap">
