@@ -1,30 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock } from 'react-icons/fa';
-
-const events = [
-  {
-    title: "Live Band Night",
-    day: "Every Friday",
-    time: "8:00 PM - 1:00 AM",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
-    desc: "Start your weekend with our signature live band performing soulful covers and original hits."
-  },
-  {
-    title: "Ethiopian Jazz Night",
-    day: "Every Saturday",
-    time: "9:00 PM - 2:00 AM",
-    image: "https://images.unsplash.com/photo-1522863602463-afebb88d5916?q=80&w=800&auto=format&fit=crop",
-    desc: "Experience the rich sounds of Ethio-Jazz blending traditional melodies with contemporary rhythms."
-  },
-  {
-    title: "Weekend Lounge Party",
-    day: "Every Sunday",
-    time: "6:00 PM - Midnight",
-    image: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=800&auto=format&fit=crop",
-    desc: "Wind down the weekend with signature cocktails, ambient lighting, and our resident DJ."
-  }
-];
+import liveBandVideo from '../assets/live-band.mp4';
 
 const Events = ({ t }) => {
   const eventImages = [
@@ -68,15 +45,27 @@ const Events = ({ t }) => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.2, duration: 0.8 }}
               key={idx}
-              className="group relative rounded-2xl overflow-hidden bg-black border border-white/5 hover:border-accent/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.1)] flex flex-col md:flex-row"
+              className="group relative rounded-2xl overflow-hidden bg-black border border-white/5 hover:border-accent/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.1)] flex flex-col md:flex-row mb-8 last:mb-0"
             >
               <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
-                <img 
-                  src={eventImages[idx]} 
-                  alt={event.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {event.title === "Live Band Night" || event.title === "የቀጥታ ባንድ ምሽት" ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  >
+                    <source src={liveBandVideo} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img 
+                    src={eventImages[idx]} 
+                    alt={event.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                )}
               </div>
               
               <div className="w-full md:w-1/2 p-6 sm:p-8 relative z-20 flex flex-col justify-center">
