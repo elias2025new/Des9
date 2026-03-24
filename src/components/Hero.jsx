@@ -1,21 +1,36 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
-import heroBg from '../assets/hero-bg.png';
+import heroBg1 from '../assets/hero-bg.png';
+import heroBg2 from '../assets/hero-bg-2.png';
 
 const Hero = ({ t }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [heroBg1, heroBg2];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Media */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        <motion.img 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          src={heroBg} 
-          alt="Luxury Restaurant Lounge" 
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode="wait">
+          <motion.img 
+            key={currentImage}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            src={images[currentImage]} 
+            alt="Luxury Restaurant Lounge" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary"></div>
       </div>
 
