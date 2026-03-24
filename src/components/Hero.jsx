@@ -1,22 +1,52 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
 import heroVideo from '../assets/hero-bg.mp4';
+import heroBg from '../assets/hero-bg.png';
 
 const Hero = ({ t }) => {
+  const [showVideo, setShowVideo] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVideo(false);
+    }, 30000); // 30 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Media */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        <AnimatePresence mode="wait">
+          {showVideo ? (
+            <motion.video 
+              key="hero-video"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </motion.video>
+          ) : (
+            <motion.img 
+              key="hero-image"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              src={heroBg} 
+              alt="Luxury Restaurant Lounge" 
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            />
+          )}
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary"></div>
       </div>
 
