@@ -3,11 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
 import hero1 from '../assets/hero-1.jpg';
 import hero2 from '../assets/hero-bg.png';
-import hero3 from '../assets/hero-3.jpg';
 
 const Hero = ({ t }) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [hero1, hero2, hero3];
+  const images = [hero1, hero2];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -59,9 +58,36 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-sm sm:text-lg md:text-lg lg:text-xl mb-12 sm:mb-10 text-secondary/70 italic font-playfair sm:tracking-widest px-4 md:px-0"
+          className="text-sm sm:text-lg md:text-lg lg:text-xl mb-6 sm:mb-8 text-secondary/70 italic font-playfair sm:tracking-widest px-4 md:px-0"
         >
           {t.tagline}
+        </motion.p>
+
+        {t.specialties && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mb-8 px-4"
+          >
+            <p className="text-secondary/50 uppercase tracking-widest text-xs mb-4">{t.specializationLabel}</p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+              {t.specialties.map((spec, i) => (
+                <span key={i} className="text-accent text-sm font-bold uppercase tracking-[0.2em]">
+                  {spec}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="text-lg sm:text-2xl font-playfair text-white mb-12 sm:mb-10 font-bold"
+        >
+          {t.experience}
         </motion.p>
         
         <motion.div 

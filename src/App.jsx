@@ -7,6 +7,7 @@ import Events from './components/Events';
 import Reservation from './components/Reservation';
 import Location from './components/Location';
 import Footer from './components/Footer';
+import WhyChooseUs from './components/WhyChooseUs';
 
 import { translations } from './translations';
 
@@ -24,6 +25,7 @@ function App() {
         <Reservation t={t.reservation} />
         <Location t={t.location} />
         <About t={t.aboutUs} />
+        <WhyChooseUs t={t.whyChooseUs} />
       </main>
       <Footer lang={lang} t={t.footer} />
     </div>

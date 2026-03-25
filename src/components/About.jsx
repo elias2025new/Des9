@@ -47,9 +47,39 @@ const About = ({ t }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-secondary/80 text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-16"
+          className="text-secondary/80 text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-10"
         >
           {t.description}
+        </motion.p>
+
+        {t.focusPoints && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mb-12"
+          >
+            <h4 className="text-accent uppercase tracking-widest font-bold mb-6 italic">{t.focusTitle}</h4>
+            <div className="flex flex-wrap justify-center gap-6">
+              {t.focusPoints.map((point, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/5 px-6 py-3 border border-white/10 rounded-sm">
+                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <span className="text-secondary/90 font-medium tracking-wide">{point}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="text-secondary/70 text-lg lg:text-xl italic font-playfair max-w-2xl mx-auto mb-16"
+        >
+          {t.conclusion}
         </motion.p>
 
         <motion.div 

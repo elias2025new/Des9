@@ -11,13 +11,13 @@ const Events = ({ t }) => {
   ];
 
   return (
-    <section id="events" className="section-padding py-16 sm:py-24 bg-primary relative overflow-hidden">
+    <section id="events" className="section-padding py-10 sm:py-24 bg-primary relative overflow-hidden">
       {/* Glow effects */}
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-optional-accent/10 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-10 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,13 +31,13 @@ const Events = ({ t }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-3xl sm:text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
+            className="text-2xl sm:text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
           >
             {t.title}
           </motion.h2>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
+        <div className="max-w-6xl mx-auto space-y-8 sm:space-y-16">
           {t.items.map((event, idx) => (
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -50,7 +50,7 @@ const Events = ({ t }) => {
               }`}
             >
               {/* Media Section */}
-              <div className="w-full md:w-[55%] h-72 md:h-[450px] overflow-hidden relative">
+              <div className="w-full md:w-[55%] h-56 sm:h-72 md:h-[450px] overflow-hidden relative">
                 <div className={`absolute inset-0 z-10 bg-gradient-to-t md:bg-gradient-to-${idx % 2 === 1 ? 'l' : 'r'} from-black via-black/20 to-transparent opacity-80`}></div>
                 {event.title === "Live Band Night" || event.title === "የቀጥታ ባንድ ምሽት" ? (
                   <video 
@@ -72,12 +72,12 @@ const Events = ({ t }) => {
               </div>
               
               {/* Content Section */}
-              <div className="w-full md:w-[45%] p-8 sm:p-12 lg:p-16 relative z-20 flex flex-col justify-center">
+              <div className="w-full md:w-[45%] p-6 sm:p-12 lg:p-16 relative z-20 flex flex-col justify-center">
                 <div className="mb-6">
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-4 group-hover:text-accent transition-colors duration-500 leading-tight">
+                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-3 group-hover:text-accent transition-colors duration-500 leading-tight">
                     {event.title}
                   </h3>
-                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                  <div className="flex flex-wrap gap-3 sm:gap-6">
                     <div className="flex items-center text-accent/90 text-sm tracking-widest uppercase gap-2">
                       <FaCalendarAlt className="text-xs" />
                       <span>{event.day}</span>
@@ -89,13 +89,13 @@ const Events = ({ t }) => {
                   </div>
                 </div>
                 
-                <p className="text-secondary/70 text-base sm:text-lg font-light leading-relaxed mb-10 max-w-md">
+                <p className="text-secondary/70 text-sm sm:text-lg font-light leading-relaxed mb-6 max-w-md">
                   {event.desc}
                 </p>
                 
                 <a 
                   href="#reservation" 
-                  className="inline-block w-fit px-10 py-4 bg-transparent border border-accent/40 text-accent uppercase tracking-[0.2em] text-xs font-bold hover:bg-accent hover:text-primary transition-all duration-500 rounded-sm"
+                  className="inline-block w-fit px-8 py-3 bg-transparent border border-accent/40 text-accent uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold hover:bg-accent hover:text-primary transition-all duration-500 rounded-sm"
                 >
                   {t.reserve}
                 </a>

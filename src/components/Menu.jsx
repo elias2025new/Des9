@@ -129,10 +129,26 @@ const Menu = ({ t }) => {
       {/* Scrolling Gallery Below */}
       <div className="relative z-10 mt-12 pt-12 border-t border-white/5">
         <div className="container mx-auto max-w-7xl px-6 mb-4 sm:mb-8 text-center md:text-left">
-          <p className="text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-accent/50 font-bold mb-1 sm:mb-2">Explore More</p>
+          <p className="text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-accent/50 font-bold mb-1 sm:mb-2">{t.signatureTitle || 'Explore More'}</p>
           <h4 className="text-xl sm:text-2xl font-playfair text-white opacity-80 italic">Our Culinary & Beverage Selections</h4>
         </div>
         <AutoScrollRow items={t.items} />
+        
+        {t.plus && (
+          <div className="container mx-auto max-w-7xl px-6 mt-16 text-center">
+            <div className="inline-flex items-center gap-6 py-4 px-8 bg-white/5 border border-white/10 rounded-full">
+              <span className="text-accent font-bold uppercase tracking-widest text-sm">{t.plus.title}</span>
+              {t.plus.items.map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  {i > 0 && <div className="w-1.5 h-1.5 bg-accent/30 rounded-full"></div>}
+                  <span className="text-secondary/80 font-medium tracking-wide text-sm underline decoration-accent/30 underline-offset-8">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
