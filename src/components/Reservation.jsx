@@ -182,13 +182,13 @@ const Reservation = ({ t }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl sm:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
+              <h2 className="text-xl sm:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
                 {t.title}
               </h2>
               <p className="text-secondary/60 font-light text-sm sm:text-lg max-w-lg mx-auto leading-relaxed">
                 {t.subtitle}
               </p>
-              <div className="h-0.5 sm:h-1 w-16 sm:w-20 bg-accent mx-auto mt-4 sm:mt-8 rounded-full"></div>
+              <div className="h-0.5 sm:h-1 w-12 sm:w-20 bg-accent mx-auto mt-3 sm:mt-8 rounded-full"></div>
             </motion.div>
           </div>
 
@@ -385,7 +385,7 @@ const Reservation = ({ t }) => {
                 whileHover={cooldown === 0 ? { scale: 1.02 } : {}}
                 whileTap={cooldown === 0 ? { scale: 0.98 } : {}}
                 disabled={cooldown > 0}
-                className={`w-full py-3.5 sm:py-6 rounded-lg sm:rounded-xl font-black uppercase tracking-widest sm:tracking-[0.3em] transition-all duration-300 text-sm sm:text-lg cursor-pointer ${
+                className={`w-full py-3 sm:py-6 rounded-lg sm:rounded-xl font-black uppercase tracking-widest sm:tracking-[0.3em] transition-all duration-300 text-xs sm:text-lg cursor-pointer ${
                   isSuccess 
                     ? 'bg-green-600 text-white shadow-none' 
                     : cooldown > 0

@@ -40,7 +40,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-4xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-2 sm:mb-4"
+          className="text-2xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-1 sm:mb-4"
         >
           {t.titlePrefix}<span className="text-accent">{t.titleSuffix}</span>
         </motion.h1>
@@ -49,7 +49,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-base sm:text-2xl md:text-xl lg:text-2xl font-light tracking-[0.2em] sm:tracking-[0.5em] text-secondary/90 mb-4 sm:mb-2 uppercase"
+          className="text-sm sm:text-2xl md:text-xl lg:text-2xl font-light tracking-[0.1em] sm:tracking-[0.5em] text-secondary/90 mb-2 sm:mb-2 uppercase"
         >
           {t.subtitle}
         </motion.p>
@@ -58,7 +58,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-sm sm:text-lg md:text-lg lg:text-xl mb-6 sm:mb-8 text-secondary/70 italic font-playfair sm:tracking-widest px-4 md:px-0"
+          className="text-xs sm:text-lg md:text-lg lg:text-xl mb-4 sm:mb-8 text-secondary/70 italic font-playfair sm:tracking-widest px-4 md:px-0"
         >
           {t.tagline}
         </motion.p>
@@ -70,10 +70,10 @@ const Hero = ({ t }) => {
             transition={{ delay: 0.8 }}
             className="mb-8 px-4"
           >
-            <p className="text-secondary/50 uppercase tracking-widest text-xs mb-4">{t.specializationLabel}</p>
+            <p className="text-secondary/50 uppercase tracking-widest text-[10px] mb-2">{t.specializationLabel}</p>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
               {t.specialties.map((spec, i) => (
-                <span key={i} className="text-accent text-sm font-bold uppercase tracking-[0.2em]">
+                <span key={i} className="text-accent text-[10px] sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em]">
                   {spec}
                 </span>
               ))}
@@ -85,7 +85,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="text-base sm:text-2xl font-playfair text-white mb-8 sm:mb-10 font-bold"
+          className="text-sm sm:text-2xl font-playfair text-white mb-6 sm:mb-10 font-bold"
         >
           {t.experience}
         </motion.p>
@@ -102,7 +102,7 @@ const Hero = ({ t }) => {
               e.preventDefault();
               document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-4 sm:px-10 sm:py-5 bg-accent text-primary font-bold text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 flex items-center justify-center gap-4 group"
+            className="px-6 py-3 sm:px-10 sm:py-5 bg-accent text-primary font-bold text-[10px] sm:text-sm tracking-[0.15em] sm:tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 flex items-center justify-center gap-3 sm:gap-4 group"
           >
             <span className="relative z-10">{t.button}</span>
             <motion.span 
@@ -112,7 +112,7 @@ const Hero = ({ t }) => {
               <BsArrowRight className="text-xl" />
             </motion.span>
           </a>
-          <a href="#reservation" className="px-6 py-3 sm:px-8 sm:py-4 border border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent/10 transition-colors duration-300 rounded-sm text-xs sm:text-sm">
+          <a href="#reservation" className="px-5 py-2.5 sm:px-8 sm:py-4 border border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent/10 transition-colors duration-300 rounded-sm text-[10px] sm:text-sm">
             {t.reserve}
           </a>
         </motion.div>

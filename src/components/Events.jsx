@@ -74,7 +74,7 @@ const Events = ({ t }) => {
               {/* Content Section */}
               <div className="w-full md:w-[45%] p-5 sm:p-12 lg:p-16 relative z-20 flex flex-col justify-center">
                 <div className="mb-6">
-                  <h3 className="text-xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-3 group-hover:text-accent transition-colors duration-500 leading-tight">
+                  <h3 className="text-lg sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-2 group-hover:text-accent transition-colors duration-500 leading-tight">
                     {event.title}
                   </h3>
                   <div className="flex flex-wrap gap-3 sm:gap-6">
@@ -95,7 +95,7 @@ const Events = ({ t }) => {
                 
                 <a 
                   href="#reservation" 
-                  className="inline-block w-fit px-8 py-3 bg-transparent border border-accent/40 text-accent uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold hover:bg-accent hover:text-primary transition-all duration-500 rounded-sm"
+                  className="inline-block w-fit px-6 py-2.5 bg-transparent border border-accent/40 text-accent uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold hover:bg-accent hover:text-primary transition-all duration-500 rounded-sm"
                 >
                   {t.reserve}
                 </a>
