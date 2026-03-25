@@ -99,9 +99,9 @@ const Navbar = ({ lang, setLang, t }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed inset-0 z-[120] bg-primary lg:hidden"
+            className="fixed inset-0 z-[120] bg-primary lg:hidden overflow-y-auto"
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="flex flex-col items-center justify-center min-h-full py-20 px-6 space-y-6 sm:space-y-8 text-center">
               {navLinks.map((link, idx) => (
                 <motion.a
                   initial={{ opacity: 0, y: 20 }}

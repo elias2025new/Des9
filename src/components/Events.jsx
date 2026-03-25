@@ -31,7 +31,7 @@ const Events = ({ t }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-2xl sm:text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
+            className="text-xl sm:text-4xl lg:text-6xl font-playfair font-bold text-white mb-6"
           >
             {t.title}
           </motion.h2>
@@ -50,7 +50,7 @@ const Events = ({ t }) => {
               }`}
             >
               {/* Media Section */}
-              <div className="w-full md:w-[55%] h-56 sm:h-72 md:h-[450px] overflow-hidden relative">
+              <div className="w-full md:w-[55%] h-52 sm:h-72 md:h-[450px] overflow-hidden relative">
                 <div className={`absolute inset-0 z-10 bg-gradient-to-t md:bg-gradient-to-${idx % 2 === 1 ? 'l' : 'r'} from-black via-black/20 to-transparent opacity-80`}></div>
                 {event.title === "Live Band Night" || event.title === "የቀጥታ ባንድ ምሽት" ? (
                   <video 
@@ -72,9 +72,9 @@ const Events = ({ t }) => {
               </div>
               
               {/* Content Section */}
-              <div className="w-full md:w-[45%] p-6 sm:p-12 lg:p-16 relative z-20 flex flex-col justify-center">
+              <div className="w-full md:w-[45%] p-5 sm:p-12 lg:p-16 relative z-20 flex flex-col justify-center">
                 <div className="mb-6">
-                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-3 group-hover:text-accent transition-colors duration-500 leading-tight">
+                  <h3 className="text-xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-3 group-hover:text-accent transition-colors duration-500 leading-tight">
                     {event.title}
                   </h3>
                   <div className="flex flex-wrap gap-3 sm:gap-6">

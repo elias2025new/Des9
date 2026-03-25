@@ -34,7 +34,7 @@ const Location = ({ t }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full h-[300px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 relative group mb-8 lg:mb-0"
+            className="w-full h-[250px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 relative group mb-8 lg:mb-0"
           >
             <div className="absolute inset-0 bg-accent/10 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500"></div>
             <iframe 

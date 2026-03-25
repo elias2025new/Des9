@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About = ({ t }) => {
   return (
-    <section id="about" className="min-h-screen bg-primary relative flex items-center overflow-hidden">
+    <section id="about" className="min-h-screen py-16 sm:py-0 bg-primary relative flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -29,7 +29,7 @@ const About = ({ t }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-5xl lg:text-7xl font-playfair font-bold text-white mb-10 leading-tight"
+          className="text-4xl sm:text-7xl lg:text-7xl font-playfair font-bold text-white mb-6 sm:mb-10 leading-tight"
         >
           {t.heading}
         </motion.h2>
@@ -47,7 +47,7 @@ const About = ({ t }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-secondary/80 text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-10"
+          className="text-lg sm:text-2xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10"
         >
           {t.description}
         </motion.p>

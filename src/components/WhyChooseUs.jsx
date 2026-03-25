@@ -14,7 +14,7 @@ const WhyChooseUs = ({ t }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl lg:text-5xl font-playfair font-bold text-white mb-4"
+            className="text-3xl sm:text-5xl font-playfair font-bold text-white mb-4"
           >
             {t.title}
           </motion.h2>

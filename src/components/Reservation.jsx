@@ -159,7 +159,7 @@ const Reservation = ({ t }) => {
   };
 
   return (
-    <section id="reservation" className="py-12 sm:py-32 px-4 sm:px-6 bg-primary relative">
+    <section id="reservation" className="py-10 sm:py-32 px-4 sm:px-6 bg-primary relative">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -182,7 +182,7 @@ const Reservation = ({ t }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
+              <h2 className="text-2xl sm:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
                 {t.title}
               </h2>
               <p className="text-secondary/60 font-light text-sm sm:text-lg max-w-lg mx-auto leading-relaxed">
@@ -256,7 +256,7 @@ const Reservation = ({ t }) => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 w-[150%] sm:w-full mt-2 bg-[#0a0a0a] border border-white/10 rounded-xl p-3 z-[100] grid grid-cols-2 gap-2 shadow-2xl backdrop-blur-xl"
+                      className="absolute top-full left-0 w-[140%] sm:w-full mt-2 bg-[#0a0a0a] border border-white/10 rounded-xl p-3 z-[100] grid grid-cols-2 gap-2 shadow-2xl backdrop-blur-xl"
                     >
                       {[0, 1, 2, 3, 4, 5].map(offset => (
                         <button 
@@ -298,7 +298,7 @@ const Reservation = ({ t }) => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full right-0 w-[180%] sm:w-[320px] mt-2 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 sm:p-5 z-[100] shadow-2xl backdrop-blur-2xl"
+                      className="absolute top-full right-0 w-[160%] sm:w-[320px] mt-2 bg-[#0a0a0a] border border-white/10 rounded-2xl p-3 sm:p-5 z-[100] shadow-2xl backdrop-blur-2xl"
                     >
                       {/* Period Toggle Table */}
                       <div className="flex bg-white/5 rounded-full p-1 mb-6">
@@ -326,7 +326,7 @@ const Reservation = ({ t }) => {
                       </div>
 
                       {/* Visual Clock Grid */}
-                      <div className="grid grid-cols-3 gap-2 h-44 overflow-y-auto custom-scrollbar pr-1">
+                      <div className="grid grid-cols-3 gap-2 h-36 sm:h-44 overflow-y-auto custom-scrollbar pr-1">
                         {getTimeSlots().map(slot => (
                           <button 
                             key={slot}

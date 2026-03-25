@@ -49,7 +49,7 @@ const AutoScrollRow = ({ items }) => {
         {duplicatedItems.map((item, idx) => (
           <div
             key={`${item.id}-${idx}`}
-            className="w-[280px] sm:w-[450px] md:w-[500px] flex-shrink-0 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden relative"
+            className="w-[260px] sm:w-[450px] md:w-[500px] flex-shrink-0 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden relative"
           >
             <div className="h-36 sm:h-48 md:h-56 overflow-hidden relative">
               <img
@@ -91,7 +91,7 @@ const Menu = ({ t }) => {
           </p>
         </div>
         
-        <h2 className="text-5xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4 sm:mb-6 tracking-tight">
+        <h2 className="text-4xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4 sm:mb-6 tracking-tight">
           {t.title}
         </h2>
         <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mt-4 sm:mt-8 rounded-full"></div>
@@ -137,15 +137,17 @@ const Menu = ({ t }) => {
         {t.plus && (
           <div className="container mx-auto max-w-7xl px-6 mt-16 text-center">
             <div className="inline-flex items-center gap-6 py-4 px-8 bg-white/5 border border-white/10 rounded-full">
-              <span className="text-accent font-bold uppercase tracking-widest text-sm">{t.plus.title}</span>
-              {t.plus.items.map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  {i > 0 && <div className="w-1.5 h-1.5 bg-accent/30 rounded-full"></div>}
-                  <span className="text-secondary/80 font-medium tracking-wide text-sm underline decoration-accent/30 underline-offset-8">
-                    {item}
-                  </span>
-                </div>
-              ))}
+              <span className="text-accent font-bold uppercase tracking-widest text-[10px] sm:text-sm whitespace-nowrap">{t.plus.title}</span>
+              <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-3">
+                {t.plus.items.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 sm:gap-3">
+                    {i > 0 && <div className="hidden sm:block w-1.5 h-1.5 bg-accent/30 rounded-full"></div>}
+                    <span className="text-secondary/80 font-medium tracking-wide text-[10px] sm:text-sm underline decoration-accent/30 underline-offset-4 sm:underline-offset-8">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
