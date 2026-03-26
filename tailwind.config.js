@@ -13,8 +13,10 @@ export default {
         "optional-accent": "#7B1E1E", // Wine red
       },
       fontFamily: {
-        playfair: ['"Playfair Display"', 'serif'],
-        inter: ['"Inter"', 'sans-serif'],
+        sans: ['"Poppins"', 'sans-serif'],
+        serif: ['"Poppins"', 'sans-serif'],
+        playfair: ['"Poppins"', 'sans-serif'],
+        inter: ['"Poppins"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-out forwards',

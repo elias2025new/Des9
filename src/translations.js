@@ -12,7 +12,7 @@ export const translations = {
       titlePrefix: "DES",
       titleSuffix: "፱",
       subtitle: "Restaurant & Lounge",
-      tagline: "DES9 Restaurant & Lounge is a vibrant dining destination in Addis Ababa, offering a unique blend of traditional Ethiopian cuisine and modern lounge experience.",
+      tagline: "DES9 Restaurant & Lounge is Addis Ababa's most distinguished dining destination, offering an unparalleled fusion of authentic Ethiopian culinary heritage and a truly sophisticated modern lounge experience.",
       specializationLabel: "We specialize in:",
       specialties: [
         "Authentic Ethiopian dishes",
@@ -51,7 +51,7 @@ export const translations = {
     services: {
       badge: "Experience DES፱",
       title: "Our Specialties",
-      signatureTitle: "🔥 Signature dishes:",
+      signatureTitle: "Signature dishes:",
       topServices: [
         { id: "s1", name: "Dine In", desc: "Amazing Dinning area with a home like service. Come and enjoy with your beloved once! Perfect for romantic dates, family time and hangout space with friends." },
         { id: "s4", name: "Catering Service", desc: "Whether it's a corporate event, wedding, or intimate gathering, our premium catering service brings the DES፱ culinary experience directly to your venue with impeccable service and custom menus." },
@@ -60,7 +60,7 @@ export const translations = {
       ],
       items: [
         { id: 1, name: "DES9 Special Platters (ሠላም, ፍቅር, አንድነት)", desc: "Signature sharing platters: Selam, Fikir, and Andinet — a celebration of Ethiopian unity through flavor." },
-        { id: 2, name: "Fish Tibs & Fish Combo 🐟", desc: "Fresh lake fish prepared with our signature spices, served as tibs or a variety combo." },
+        { id: 2, name: "Fish Tibs & Fish Combo", desc: "Fresh lake fish prepared with our signature spices, served as tibs or a variety combo." },
         { id: 3, name: "Kitfo & Tibs Varieties", desc: "A wide selection of expertly prepared Kitfo and Tibs dishes, tailored to your exact preference." },
         { id: 4, name: "Fasting & Non-fasting Traditional Foods", desc: "Vibrant traditional classics, prepared with authentic spices and fresh ingredients." },
         { id: 7, name: "Special Ful", desc: "Crushed fava beans with olive oil, chopped onions, tomatoes, and spicy green peppers." },
@@ -114,7 +114,7 @@ export const translations = {
       days: ["Mon - Thu", "Fri - Sat", "Sunday"]
     },
     footer: {
-      about: "Vibrant dining destination in Addis Ababa, offering traditional Ethiopian cuisine and modern lounge experience.",
+      about: "Addis Ababa's most distinguished dining destination, offering an unparalleled fusion of authentic Ethiopian culinary heritage and a truly sophisticated modern lounge experience.",
       quickLinks: "Quick Links",
       contact: "Contact Info",
       rights: "All Rights Reserved."

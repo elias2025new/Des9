@@ -8,8 +8,8 @@ const WhyChooseUs = ({ t }) => {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 translate-x-1/2 pointer-events-none"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+      <div className="container mx-auto max-w-7xl px-4 lg:px-12 relative z-10">
+        <div className="text-center lg:text-left mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ const WhyChooseUs = ({ t }) => {
             initial={{ width: 0 }}
             whileInView={{ width: '80px' }}
             viewport={{ once: true }}
-            className="h-1 bg-accent mx-auto"
+            className="h-1 bg-accent mx-auto lg:mx-0"
           ></motion.div>
         </div>
 

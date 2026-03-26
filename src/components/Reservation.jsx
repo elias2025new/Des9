@@ -139,10 +139,10 @@ const Reservation = ({ t }) => {
       };
 
       emailjs.send(
-        'service_lec1916', 
-        'template_dxl5dtn', 
+        'service_cbcpqax', 
+        'template_a0e552f', 
         templateParams, 
-        'dTV9hTx_Ag2gzdbPu'
+        'cMBKmvOZ4sPQfasEP'
       ).then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
       }, (err) => {
@@ -170,14 +170,15 @@ const Reservation = ({ t }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary"></div>
       </div>
       
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-4xl lg:max-w-6xl relative z-10">
         <div className="glass-card p-4 sm:p-12 md:p-16 border border-white/5 relative">
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-8 h-8 sm:w-12 h-12 border-t-2 border-l-2 border-accent/20 rounded-tl-2xl sm:rounded-tl-3xl m-2 sm:m-4"></div>
           <div className="absolute bottom-0 right-0 w-8 h-8 sm:w-12 h-12 border-b-2 border-r-2 border-accent/20 rounded-br-2xl sm:rounded-br-3xl m-2 sm:m-4"></div>
           
-          <div className="text-center mb-6 sm:mb-16">
-            <motion.div
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="text-center lg:text-left mb-6 lg:mb-0">
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -185,14 +186,14 @@ const Reservation = ({ t }) => {
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
                 {t.title}
               </h2>
-              <p className="text-secondary/60 font-light text-sm sm:text-lg max-w-lg mx-auto leading-relaxed">
-                {t.subtitle}
-              </p>
-              <div className="h-0.5 sm:h-1 w-12 sm:w-20 bg-accent mx-auto mt-3 sm:mt-8 rounded-full"></div>
-            </motion.div>
-          </div>
+                <p className="text-secondary/60 font-light text-sm sm:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                  {t.subtitle}
+                </p>
+                <div className="h-0.5 sm:h-1 w-12 sm:w-20 bg-accent mx-auto lg:mx-0 mt-3 sm:mt-8 rounded-full"></div>
+              </motion.div>
+            </div>
 
-          <form className="space-y-4 sm:space-y-8" onSubmit={handleSubmit}>
+            <form className="space-y-4 sm:space-y-8 lg:p-8 lg:bg-[#080808]/80 lg:rounded-2xl lg:border lg:border-white/5" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-3 sm:gap-10">
               {/* Full Name */}
               <div className="space-y-1 sm:space-y-2">
@@ -407,6 +408,7 @@ const Reservation = ({ t }) => {
               </motion.button>
             </div>
           </form>
+          </div>
 
           {/* Premium Success Overlay */}
           <AnimatePresence>

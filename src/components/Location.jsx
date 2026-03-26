@@ -6,7 +6,7 @@ const Location = ({ t }) => {
   return (
     <section id="location" className="py-24 bg-[#080808]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center lg:text-left mb-16 px-4 lg:px-0">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

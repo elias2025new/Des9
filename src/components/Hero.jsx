@@ -35,7 +35,7 @@ const Hero = ({ t }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12 sm:mt-20">
+      <div className="relative z-10 text-center lg:text-left px-4 max-w-5xl lg:max-w-7xl mx-auto mt-12 sm:mt-20 flex flex-col items-center lg:items-start w-full lg:px-16 xl:px-32">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,9 +71,9 @@ const Hero = ({ t }) => {
             className="mb-8 px-4"
           >
             <p className="text-secondary/50 uppercase tracking-widest text-[10px] mb-2">{t.specializationLabel}</p>
-            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-y-3 sm:gap-x-8">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center lg:justify-start items-center lg:items-start gap-y-3 sm:gap-x-8">
               {t.specialties.map((spec, i) => (
-                <span key={i} className="text-accent text-center text-xs sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] w-full sm:w-auto">
+                <span key={i} className="text-accent text-center lg:text-left text-xs sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] w-full sm:w-auto">
                   {spec}
                 </span>
               ))}
@@ -94,7 +94,7 @@ const Hero = ({ t }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start w-full lg:w-auto"
         >
           <a 
             href="#services" 

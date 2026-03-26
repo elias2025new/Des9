@@ -84,7 +84,7 @@ const Menu = ({ t }) => {
         <div className="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-accent/5 blur-[150px] rounded-full"></div>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6 relative z-10 text-center mb-12 sm:mb-20">
+      <div className="container mx-auto max-w-7xl px-6 relative z-10 text-center lg:text-left mb-12 sm:mb-20">
         <div className="inline-block px-4 py-1.5 border border-accent/20 rounded-full mb-6 sm:mb-8 bg-accent/5 backdrop-blur-sm">
           <p className="uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent text-[10px] sm:text-[11px] font-bold">
             {t.badge}
@@ -94,7 +94,7 @@ const Menu = ({ t }) => {
         <h2 className="text-4xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4 sm:mb-6 tracking-tight">
           {t.title}
         </h2>
-        <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mt-4 sm:mt-8 rounded-full"></div>
+        <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent lg:from-accent via-accent to-transparent lg:to-transparent mx-auto lg:mx-0 mt-4 sm:mt-8 rounded-full"></div>
       </div>
 
       {/* Top Services */}
