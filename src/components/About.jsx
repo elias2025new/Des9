@@ -88,7 +88,7 @@ const About = ({ t }) => {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <a href="#reservation" className="inline-block px-12 py-5 bg-accent text-primary font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 rounded-sm shadow-2xl">
+          <a href="#reservation" className="inline-block px-8 py-4 sm:px-12 sm:py-5 bg-accent text-primary font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 rounded-sm shadow-2xl text-xs sm:text-base">
             {t.cta}
           </a>
         </motion.div>

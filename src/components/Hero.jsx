@@ -71,9 +71,9 @@ const Hero = ({ t }) => {
             className="mb-8 px-4"
           >
             <p className="text-secondary/50 uppercase tracking-widest text-[10px] mb-2">{t.specializationLabel}</p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-y-3 sm:gap-x-8">
               {t.specialties.map((spec, i) => (
-                <span key={i} className="text-accent text-[10px] sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em]">
+                <span key={i} className="text-accent text-center text-xs sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] w-full sm:w-auto">
                   {spec}
                 </span>
               ))}
@@ -112,7 +112,7 @@ const Hero = ({ t }) => {
               <BsArrowRight className="text-xl" />
             </motion.span>
           </a>
-          <a href="#reservation" className="px-5 py-2.5 sm:px-8 sm:py-4 border border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent/10 transition-colors duration-300 rounded-sm text-[10px] sm:text-sm">
+          <a href="#reservation" className="px-5 py-3 sm:px-8 sm:py-4 border border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent/10 transition-colors duration-300 rounded-sm text-[10px] sm:text-sm flex items-center justify-center">
             {t.reserve}
           </a>
         </motion.div>

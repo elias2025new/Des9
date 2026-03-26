@@ -49,7 +49,7 @@ const AutoScrollRow = ({ items }) => {
         {duplicatedItems.map((item, idx) => (
           <div
             key={`${item.id}-${idx}`}
-            className="w-[260px] sm:w-[450px] md:w-[500px] flex-shrink-0 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden relative"
+            className="w-[300px] sm:w-[450px] md:w-[500px] flex-shrink-0 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden relative"
           >
             <div className="h-36 sm:h-48 md:h-56 overflow-hidden relative">
               <img
@@ -136,8 +136,8 @@ const Menu = ({ t }) => {
         
         {t.plus && (
           <div className="container mx-auto max-w-7xl px-6 mt-16 text-center">
-            <div className="inline-flex items-center gap-6 py-4 px-8 bg-white/5 border border-white/10 rounded-full">
-              <span className="text-accent font-bold uppercase tracking-widest text-[10px] sm:text-sm whitespace-nowrap">{t.plus.title}</span>
+            <div className="inline-flex flex-col md:flex-row items-center gap-4 sm:gap-6 py-5 px-6 sm:px-10 bg-white/5 border border-white/10 rounded-2xl md:rounded-full">
+              <span className="text-accent font-bold uppercase tracking-widest text-xs sm:text-sm whitespace-nowrap">{t.plus.title}</span>
               <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-3">
                 {t.plus.items.map((item, i) => (
                   <div key={i} className="flex items-center gap-2 sm:gap-3">

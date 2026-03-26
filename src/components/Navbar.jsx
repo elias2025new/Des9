@@ -51,7 +51,7 @@ const Navbar = ({ lang, setLang, t }) => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex space-x-6 xl:space-x-8 items-center">
+          <div className="hidden lg:flex space-x-6 lg:space-x-10 xl:space-x-14 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -80,7 +80,7 @@ const Navbar = ({ lang, setLang, t }) => {
               {lang === 'en' ? 'AM' : 'EN'}
             </button>
             <button
-              className="text-2xl text-accent pl-1"
+              className="text-2xl text-accent flex items-center justify-center"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <HiX /> : <HiMenu />}

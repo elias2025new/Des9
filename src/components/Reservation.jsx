@@ -182,7 +182,7 @@ const Reservation = ({ t }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-xl sm:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white mb-2 sm:mb-4 tracking-tight">
                 {t.title}
               </h2>
               <p className="text-secondary/60 font-light text-sm sm:text-lg max-w-lg mx-auto leading-relaxed">
