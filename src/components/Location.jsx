@@ -28,7 +28,8 @@ const Location = ({ t }) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Map Embed */}
+          
+
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +51,8 @@ const Location = ({ t }) => {
             ></iframe>
           </motion.div>
 
-          {/* Details */}
+          
+
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -79,10 +81,13 @@ const Location = ({ t }) => {
               </div>
               <div>
                 <h3 className="text-xl font-playfair font-bold text-white mb-2">{t.contactTitle}</h3>
-                <p className="text-secondary/60 font-light leading-relaxed">
-                  +251 91 123 4567 <br />
-                  reservations@des9lounge.com
-                </p>
+                <address className="not-italic">
+                  <p className="text-secondary/60 font-light leading-relaxed">
+                    <a href="tel:+251911999966" className="hover:text-accent transition-colors">+251 911 999 966</a> <br />
+                    <a href="tel:+251902333344" className="hover:text-accent transition-colors">+251 902 333 344</a> <br />
+                    <a href="mailto:reservation@des9.net" className="hover:text-accent transition-colors">reservation@des9.net</a>
+                  </p>
+                </address>
               </div>
             </div>
 

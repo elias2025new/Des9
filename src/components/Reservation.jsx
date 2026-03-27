@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaUserFriends, FaCheckCircle, FaExclamationCircle, FaSun, FaMoon, FaCloudSun } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
+const availableDates = [0, 1, 2, 3, 4, 5].map(offset => {
+  const date = new Date(Date.now() + offset * 86400000);
+  const label = offset === 0 ? 'Today' : offset === 1 ? 'Tomorrow' : date.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric' });
+  return { offset, label };
+});
+
 const Reservation = ({ t }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,24 +18,25 @@ const Reservation = ({ t }) => {
     guests: 2
   });
 
-  const [activePicker, setActivePicker] = useState(null); // 'date', 'time', 'guests' or null
-  const [timePeriod, setTimePeriod] = useState('night'); // 'morning', 'day' or 'night'
+  const [activePicker, setActivePicker] = useState(null); 
+  const [timePeriod, setTimePeriod] = useState('night'); 
   const [phoneError, setPhoneError] = useState('');
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [cooldown, setCooldown] = useState(0); // seconds remaining
-
-  // Initialize cooldown from localStorage
-  useEffect(() => {
+  const [cooldown, setCooldown] = useState(() => {
     const lastReservation = localStorage.getItem('lastReservation');
     if (lastReservation) {
       const elapsed = (Date.now() - parseInt(lastReservation)) / 1000;
       const remaining = Math.max(0, 600 - Math.floor(elapsed));
-      if (remaining > 0) setCooldown(remaining);
+      return remaining > 0 ? remaining : 0;
     }
-  }, []);
+    return 0;
+  });
 
-  // Cooldown timer
+  
+
+  
+
   useEffect(() => {
     if (cooldown > 0) {
       const timer = setInterval(() => {
@@ -51,7 +58,8 @@ const Reservation = ({ t }) => {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Ethiopian Phone Validation
+  
+
   const validatePhone = (value) => {
     const cleanValue = value.replace(/\s+/g, '');
     const ethiopiaRegex = /^(\+251|0)(9|7)\d{8}$/;
@@ -77,7 +85,8 @@ const Reservation = ({ t }) => {
     setActivePicker(null);
   };
 
-  // Ethiopian Time Slots
+  
+
   const morningSlots = [
     "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30"
   ];
@@ -115,11 +124,13 @@ const Reservation = ({ t }) => {
     if (isValid && cooldown === 0) {
       setIsSuccess(true);
       
-      // Save reservation time for anti-spam (10 mins)
+      
+
       localStorage.setItem('lastReservation', Date.now().toString());
       setCooldown(600);
       
-      // Construct a consolidated message for the EmailJS "message" field
+      
+
       const fullMessage = `New Reservation Details:\n` +
                           `------------------------\n` +
                           `Name: ${formData.name}\n` +
@@ -128,12 +139,14 @@ const Reservation = ({ t }) => {
                           `Time: ${formData.time}\n` +
                           `Guests: ${formData.guests}`;
 
-      // EmailJS Template Parameters (Standard labels for default templates)
+      
+
       const templateParams = {
         from_name: formData.name,
         from_phone: formData.phone,
         message: fullMessage,
-        reservation_date: formData.date, // Kept in case user uses them
+        reservation_date: formData.date, 
+
         reservation_time: formData.time,
         guests: formData.guests
       };
@@ -149,7 +162,8 @@ const Reservation = ({ t }) => {
         console.error('Failed to send email:', err);
       });
       
-      // Keep success message visible for a few seconds
+      
+
       setTimeout(() => {
         setIsSuccess(false);
         setAttemptedSubmit(false);
@@ -160,7 +174,8 @@ const Reservation = ({ t }) => {
 
   return (
     <section id="reservation" className="py-10 sm:py-32 px-4 sm:px-6 bg-primary relative">
-      {/* Dynamic Background */}
+      
+
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2000&auto=format&fit=crop" 
@@ -172,7 +187,8 @@ const Reservation = ({ t }) => {
       
       <div className="container mx-auto max-w-4xl lg:max-w-6xl relative z-10">
         <div className="glass-card p-4 sm:p-12 md:p-16 border border-white/5 relative">
-          {/* Decorative Corner Accents */}
+          
+
           <div className="absolute top-0 left-0 w-8 h-8 sm:w-12 h-12 border-t-2 border-l-2 border-accent/20 rounded-tl-2xl sm:rounded-tl-3xl m-2 sm:m-4"></div>
           <div className="absolute bottom-0 right-0 w-8 h-8 sm:w-12 h-12 border-b-2 border-r-2 border-accent/20 rounded-br-2xl sm:rounded-br-3xl m-2 sm:m-4"></div>
           
@@ -195,7 +211,8 @@ const Reservation = ({ t }) => {
 
             <form className="space-y-4 sm:space-y-8 lg:p-8 lg:bg-[#080808]/80 lg:rounded-2xl lg:border lg:border-white/5" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-3 sm:gap-10">
-              {/* Full Name */}
+              
+
               <div className="space-y-1 sm:space-y-2">
                 <div className="flex justify-between items-center ml-1">
                   <label className="text-[10px] sm:text-xs uppercase tracking-widest text-accent font-bold">{t.name}</label>
@@ -212,7 +229,8 @@ const Reservation = ({ t }) => {
                 </div>
               </div>
 
-              {/* Phone with Validation */}
+              
+
               <div className="space-y-1 sm:space-y-2">
                 <div className="flex justify-between items-center ml-1">
                   <label className="text-[10px] sm:text-xs uppercase tracking-widest text-accent font-bold">{t.phone}</label>
@@ -235,7 +253,8 @@ const Reservation = ({ t }) => {
             </div>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-8">
-              {/* Custom Date Picker */}
+              
+
               <div className="relative space-y-1 sm:space-y-2">
                 <div className="flex justify-between items-center ml-1">
                   <label className="text-[10px] sm:text-xs uppercase tracking-widest text-accent font-bold">{t.date}</label>
@@ -259,13 +278,13 @@ const Reservation = ({ t }) => {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 w-[140%] sm:w-full mt-2 bg-[#0a0a0a] border border-white/10 rounded-xl p-3 z-[100] grid grid-cols-2 gap-2 shadow-2xl backdrop-blur-xl"
                     >
-                      {[0, 1, 2, 3, 4, 5].map(offset => (
+                      {availableDates.map(({ offset, label }) => (
                         <button 
                           key={offset}
                           onClick={() => selectDate(offset)}
                           className="py-2 text-[10px] sm:text-xs text-white/70 hover:bg-accent hover:text-primary rounded-lg transition-all"
                         >
-                          {offset === 0 ? 'Today' : offset === 1 ? 'Tomorrow' : new Date(Date.now() + offset * 86400000).toLocaleDateString(undefined, { weekday: 'short', day: 'numeric' })}
+                          {label}
                         </button>
                       ))}
                     </motion.div>
@@ -273,7 +292,8 @@ const Reservation = ({ t }) => {
                 </AnimatePresence>
               </div>
 
-              {/* NEW CLOCK TIME PICKER */}
+              
+
               <div className="relative space-y-1 sm:space-y-2">
                 <div className="flex justify-between items-center ml-1">
                   <div className="flex gap-2 items-center">
@@ -301,7 +321,8 @@ const Reservation = ({ t }) => {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full right-0 w-[160%] sm:w-[320px] mt-2 bg-[#0a0a0a] border border-white/10 rounded-2xl p-3 sm:p-5 z-[100] shadow-2xl backdrop-blur-2xl"
                     >
-                      {/* Period Toggle Table */}
+                      
+
                       <div className="flex bg-white/5 rounded-full p-1 mb-6">
                         <button 
                           type="button"
@@ -326,7 +347,8 @@ const Reservation = ({ t }) => {
                         </button>
                       </div>
 
-                      {/* Visual Clock Grid */}
+                      
+
                       <div className="grid grid-cols-3 gap-2 h-36 sm:h-44 overflow-y-auto custom-scrollbar pr-1">
                         {getTimeSlots().map(slot => (
                           <button 
@@ -410,7 +432,8 @@ const Reservation = ({ t }) => {
           </form>
           </div>
 
-          {/* Premium Success Overlay */}
+          
+
           <AnimatePresence>
             {isSuccess && (
               <motion.div
@@ -469,28 +492,34 @@ const Reservation = ({ t }) => {
                   </motion.div>
                 </motion.div>
 
-                {/* Subtle floating particles */}
+                
+
                 <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(15)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ 
-                        x: Math.random() * 100 + "%", 
-                        y: "110%", 
-                        opacity: 0.2
-                      }}
-                      animate={{ 
-                        y: "-10%",
-                        opacity: 0
-                      }}
-                      transition={{ 
-                        duration: Math.random() * 5 + 5,
-                        repeat: Infinity,
-                        delay: Math.random() * 5
-                      }}
-                      className="absolute w-1 h-1 bg-accent rounded-full"
-                    />
-                  ))}
+                  {[...Array(15)].map((_, i) => {
+                    const randomX = (i * 7) % 100; // Deterministic random-like values
+                    const randomDuration = 5 + (i % 5);
+                    const randomDelay = i * 0.3;
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ 
+                          x: randomX + "%", 
+                          y: "110%", 
+                          opacity: 0.2
+                        }}
+                        animate={{ 
+                          y: "-10%",
+                          opacity: 0
+                        }}
+                        transition={{ 
+                          duration: randomDuration,
+                          repeat: Infinity,
+                          delay: randomDelay
+                        }}
+                        className="absolute w-1 h-1 bg-accent rounded-full"
+                      />
+                    );
+                  })}
                 </div>
               </motion.div>
             )}

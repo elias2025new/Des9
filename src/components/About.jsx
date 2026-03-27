@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 const About = ({ t }) => {
   return (
     <section id="about" className="min-h-screen py-16 sm:py-0 bg-primary relative flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      
+
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop" 
@@ -93,7 +94,8 @@ const About = ({ t }) => {
         </motion.div>
       </div>
 
-      {/* Aesthetic Accents */}
+      
+
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-accent/5 blur-[100px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
     </section>
@@ -101,3 +103,4 @@ const About = ({ t }) => {
 };
 
 export default About;
+

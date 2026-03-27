@@ -1,11 +1,15 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const topImageMap = {
-  s1: "/images/cat_non_fasting_lunch_dinner.png", // Dine In
-  s2: "/images/andinet_platter.png",               // Agelgel
-  s3: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", // Live Band Events
-  s4: "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop", // Catering Service
+  s1: "/images/cat_non_fasting_lunch_dinner.png", 
+
+  s2: "/images/andinet_platter.png",               
+
+  s3: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", 
+
+  s4: "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop", 
+
 };
 
 const galleryImageMap = {
@@ -24,7 +28,8 @@ const galleryImageMap = {
 };
 
 const AutoScrollRow = ({ items }) => {
-  // Duplicating items 4 times to ensure no gaps during loop or drag
+  
+
   const duplicatedItems = [...items, ...items, ...items, ...items];
   const constraintsRef = useRef(null);
 
@@ -43,7 +48,8 @@ const AutoScrollRow = ({ items }) => {
           ease: "linear",
           repeatType: "loop"
         }}
-        // Removed pause on hover/tap to ensure animation persists on mobile
+        
+
         dragElastic={0.1}
       >
         {duplicatedItems.map((item, idx) => (
@@ -78,7 +84,8 @@ const AutoScrollRow = ({ items }) => {
 const Menu = ({ t }) => {
   return (
     <section id="services" className="py-20 sm:py-32 bg-[#050505] relative overflow-hidden">
-      {/* Background Accents */}
+      
+
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[10%] -left-[10%] w-[40%] h-[40%] bg-accent/5 blur-[150px] rounded-full"></div>
         <div className="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-accent/5 blur-[150px] rounded-full"></div>
@@ -97,7 +104,8 @@ const Menu = ({ t }) => {
         <div className="h-0.5 sm:h-1 w-[80px] sm:w-[120px] bg-gradient-to-r from-transparent lg:from-accent via-accent to-transparent lg:to-transparent mx-auto lg:mx-0 mt-4 sm:mt-8 rounded-full"></div>
       </div>
 
-      {/* Top Services */}
+      
+
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 relative z-10 mb-16 sm:mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {t.topServices.map((service) => (
@@ -126,7 +134,8 @@ const Menu = ({ t }) => {
         </div>
       </div>
 
-      {/* Scrolling Gallery Below */}
+      
+
       <div className="relative z-10 mt-12 pt-12 border-t border-white/5">
         <div className="container mx-auto max-w-7xl px-6 mb-4 sm:mb-8 text-center md:text-left">
           <p className="text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-accent/50 font-bold mb-1 sm:mb-2">{t.signatureTitle || 'Explore More'}</p>

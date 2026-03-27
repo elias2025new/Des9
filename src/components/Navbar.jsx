@@ -26,7 +26,8 @@ const Navbar = ({ lang, setLang, t }) => {
 
   return (
     <>
-      {/* Navbar Bar */}
+      
+
       <motion.nav
         initial={{ y: -100 }}
         animate={{ 
@@ -50,7 +51,8 @@ const Navbar = ({ lang, setLang, t }) => {
             {lang === 'am' ? 'ደሥ ፱' : 'DES፱'}
           </a>
 
-          {/* Desktop Nav */}
+          
+
           <div className="hidden lg:flex space-x-6 lg:space-x-10 xl:space-x-14 items-center">
             {navLinks.map((link) => (
               <a
@@ -62,7 +64,8 @@ const Navbar = ({ lang, setLang, t }) => {
               </a>
             ))}
 
-            {/* Language Switcher */}
+            
+
             <button
               onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
               className="ml-4 px-3 py-1 border border-accent/30 text-[10px] tracking-[0.2em] uppercase hover:bg-accent hover:text-primary transition-all rounded-full font-bold"
@@ -71,7 +74,8 @@ const Navbar = ({ lang, setLang, t }) => {
             </button>
           </div>
 
-          {/* Mobile Actions */}
+          
+
           <div className="flex items-center gap-3 lg:hidden">
             <button
               onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
@@ -89,9 +93,8 @@ const Navbar = ({ lang, setLang, t }) => {
         </div>
       </motion.nav>
 
-      {/* Mobile Nav Overlay — rendered as sibling to nav, NOT inside it.
-          This avoids z-index stacking context issues. z-[120] puts it above
-          all page content but below the nav bar (z-[150]). */}
+          
+
       <AnimatePresence>
         {isOpen && (
           <motion.div

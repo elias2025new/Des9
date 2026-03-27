@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+
+
 export default {
   content: [
     "./index.html",
@@ -7,10 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0B0B0B", // Deep black
-        accent: "#C9A227", // Luxury gold
-        secondary: "#F5F5F5", // Soft white
-        "optional-accent": "#7B1E1E", // Wine red
+        primary: "#0B0B0B", 
+
+        accent: "#C9A227", 
+
+        secondary: "#F5F5F5", 
+
+        "optional-accent": "#7B1E1E", 
+
       },
       fontFamily: {
         sans: ['"Poppins"', 'sans-serif'],

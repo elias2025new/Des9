@@ -5,7 +5,8 @@ import { FiCheckCircle } from 'react-icons/fi';
 const WhyChooseUs = ({ t }) => {
   return (
     <section className="py-24 bg-primary relative overflow-hidden">
-      {/* Background decoration */}
+      
+
       <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 translate-x-1/2 pointer-events-none"></div>
       
       <div className="container mx-auto max-w-7xl px-4 lg:px-12 relative z-10">
